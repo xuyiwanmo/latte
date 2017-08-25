@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\layout\\abc_search_view.xml"
-    },
-    {
         "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\layout\\abc_search_view.xml"
     },
     {
         "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\select_dialog_singlechoice_material.xml",

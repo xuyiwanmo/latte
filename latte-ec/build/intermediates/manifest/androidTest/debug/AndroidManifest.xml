@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zhang.latteec.test" >
+    package="com.zhang.latte_ec.test" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.zhang.latteec.test"
-        android:targetPackage="com.zhang.latteec.test" />
+        android:label="Tests for com.zhang.latte_ec.test"
+        android:targetPackage="com.zhang.latte_ec.test" />
 
     <meta-data
         android:name="android.support.VERSION"
