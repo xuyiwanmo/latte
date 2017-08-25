@@ -24,4 +24,5 @@ task clean(type: Delete) {
 
 ext{
     retrofitVersion="2.3.0"
+    iconifyVersion="2.2.2"
 }

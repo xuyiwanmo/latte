@@ -4,10 +4,6 @@
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
@@ -16,19 +12,7 @@
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
         "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
-    },
-    {
-        "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
-    },
-    {
-        "merged": "C:\\w1kyok\\App\\Latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     }
 ]
