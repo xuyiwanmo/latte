@@ -16,12 +16,12 @@
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_vector_test.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_vector_test.xml"
-    },
-    {
         "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_textfield_search_material.xml",
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
         "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\notification_icon_background.xml",

@@ -4,12 +4,12 @@
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\德医互联\\.android\\build-cache\\9cc7948428c7b0865684f4fdbb340fbae1fb8875\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "D:\\ASproject\\latte\\latte-ec\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",

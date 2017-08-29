@@ -1,10 +1,14 @@
 package com.zhang.latte_core.net;
 
+import android.content.Context;
+
 import com.zhang.latte_core.net.callback.IError;
 import com.zhang.latte_core.net.callback.IFailure;
 import com.zhang.latte_core.net.callback.IRequest;
 import com.zhang.latte_core.net.callback.ISuccess;
+import com.zhang.latte_core.ui.LoaderStyle;
 
+import java.io.File;
 import java.util.WeakHashMap;
 
 import okhttp3.MediaType;
@@ -16,12 +20,15 @@ import okhttp3.RequestBody;
 
 public class RestClientBuilder {
     private static final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
-    private String mUrl;
-    private IRequest mIRequest;
-    private ISuccess mISuccess;
-    private IFailure mIFailure;
-    private IError mIError;
-    private RequestBody mBody;
+    private String mUrl = null;
+    private IRequest mIRequest = null;
+    private ISuccess mISuccess = null;
+    private IFailure mIFailure = null;
+    private IError mIError = null;
+    private RequestBody mBody = null;
+    private Context mContext = null;
+    private LoaderStyle mLoaderStyle = null;
+    private File mFile=null;
 
     RestClientBuilder() {
 
@@ -66,8 +73,31 @@ public class RestClientBuilder {
         this.mIError = iError;
         return this;
     }
+    public final RestClientBuilder file(File file) {
+        this.mFile = file;
+        return this;
+    }
+    public final RestClientBuilder file(String filePath) {
+        this.mFile = new File(filePath);
+        return this;
+    }
 
+    /**
+     * 加载对话框
+     * @return
+     */
+
+    public final RestClientBuilder loader(Context context){
+        this.mContext=context;
+        this.mLoaderStyle=LoaderStyle.BallSpinFadeLoaderIndicator;
+        return this;
+    }
+    public final RestClientBuilder loader(Context context,LoaderStyle loaderStyle){
+        this.mContext=context;
+        this.mLoaderStyle=loaderStyle;
+        return this;
+    }
     public final RestClient build() {
-        return new RestClient(mUrl, PARAMS, mIRequest, mISuccess, mIFailure, mIError, mBody);
+        return new RestClient(mUrl, PARAMS, mIRequest, mISuccess, mIFailure, mIError, mBody, mContext, mLoaderStyle,mFile);
     }
 }
