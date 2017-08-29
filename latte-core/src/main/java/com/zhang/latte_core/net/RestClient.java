@@ -1,45 +1,102 @@
 package com.zhang.latte_core.net;
 
-import java.util.Map;
+import com.zhang.latte_core.net.callback.IError;
+import com.zhang.latte_core.net.callback.IFailure;
+import com.zhang.latte_core.net.callback.IRequest;
+import com.zhang.latte_core.net.callback.ISuccess;
+import com.zhang.latte_core.net.callback.RequestCallbacks;
 
-import okhttp3.MultipartBody;
+import java.util.WeakHashMap;
+
+import okhttp3.RequestBody;
 import retrofit2.Call;
-import retrofit2.http.DELETE;
-import retrofit2.http.FieldMap;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.GET;
-import retrofit2.http.Multipart;
-import retrofit2.http.POST;
-import retrofit2.http.PUT;
-import retrofit2.http.Part;
-import retrofit2.http.QueryMap;
-import retrofit2.http.Streaming;
-import retrofit2.http.Url;
+import retrofit2.Callback;
 
 /**
  * 请求的实现类
  */
 
-public interface RestClient {
-    @GET
-    Call<String> get(@Url String url, @QueryMap Map<String, Object> params);
+public class RestClient {
 
-    @FormUrlEncoded
-    @POST
-    Call<String> post(@Url String url, @FieldMap Map<String, Object> params);
+    private final String URL;
+    private final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
+    private final IRequest REQUEST;
+    private final ISuccess SUCCESS;
+    private final IFailure FAILURE;
+    private final IError ERROR;
+    private final RequestBody BODY;
 
-    @FormUrlEncoded
-    @PUT
-    Call<String> put(@Url String url, @FieldMap Map<String, Object> params);
+    public RestClient(String url,
+                      WeakHashMap<String, Object> params,
+                      IRequest request,
+                      ISuccess success,
+                      IFailure failure,
+                      IError error,
+                      RequestBody body) {
+        this.URL = url;
+        this.PARAMS.putAll(params);
+        this.REQUEST = request;
+        this.SUCCESS = success;
+        this.FAILURE = failure;
+        this.ERROR = error;
+        this.BODY = body;
+    }
 
-    @DELETE
-    Call<String> delete(@Url String url, @QueryMap Map<String, Object> params);
+    public static RestClientBuilder builder() {
+        return new RestClientBuilder();
+    }
 
-    @Streaming
-    @GET
-    Call<String> download(@Url String url, @QueryMap Map<String, Object> params);
+    private void request(HttpMethod method) {
+        final RestService service = RestCreator.getRestService();
+        Call<String> call = null;
 
-    @Multipart
-    @POST
-    Call<String> post(@Url String url, @Part MultipartBody.Part params);
+        if (REQUEST != null) {
+            REQUEST.onRequestStart();
+        }
+
+        switch (method) {
+            case GET:
+                call = service.get(URL, PARAMS);
+                break;
+            case POST:
+                call = service.post(URL, PARAMS);
+                break;
+            case PUT:
+                call = service.put(URL, PARAMS);
+                break;
+            case DELETE:
+                call = service.delete(URL, PARAMS);
+                break;
+
+            default:
+                break;
+
+        }
+
+        if(call!=null){
+            call.enqueue(getRequestCallback());
+        }
+    }
+
+    private Callback<String> getRequestCallback(){
+        return new RequestCallbacks(
+                REQUEST,
+                SUCCESS,
+                FAILURE,
+                ERROR
+        );
+    }
+
+    public final  void  get(){
+        request(HttpMethod.GET);
+    }
+    public final  void  post(){
+        request(HttpMethod.POST);
+    }
+    public final  void  put(){
+        request(HttpMethod.PUT);
+    }
+    public final  void  delete(){
+        request(HttpMethod.DELETE);
+    }
 }

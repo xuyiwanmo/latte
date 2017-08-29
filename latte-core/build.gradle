@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -28,8 +28,21 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
+
     compile project(':latte-annotations')
     compile "com.joanzapata.iconify:android-iconify-ionicons:$rootProject.ext.iconifyVersion"
     compile "com.joanzapata.iconify:android-iconify-fontawesome:$rootProject.ext.iconifyVersion"
+
+    //fragment
+    compile "me.yokeyword:fragmentation:$rootProject.ext.fragmentation"
+    compile "me.yokeyword:fragmentation-swipeback:$rootProject.ext.fragmentation"
+
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterVersion"
+
+    //对话框
+    compile "com.wang.avi:library:$rootProject.ext.avLoadingVersion"
 }

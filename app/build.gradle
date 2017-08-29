@@ -24,4 +24,7 @@ dependencies {
     compile project(':latte-ec')
     compile project(':latte-annotations')
     annotationProcessor project(':latte-compiler')
+
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterVersion"
 }
