@@ -1,10 +1,14 @@
 package com.zhang.latte_core.app;
 
+import android.os.Handler;
+
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import okhttp3.Interceptor;
 
 /**
  * 全局初始化  参数就创建
@@ -13,13 +17,15 @@ import java.util.HashMap;
 public class Configurator {
 
     //键值对在不使用的时候  会自动回收
-    private static final HashMap<String, Object> LATTE_CONFIGS = new HashMap<>();
+    private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
 
     //存储字体的空间
     private static final ArrayList<IconFontDescriptor> ICONS=new ArrayList<>();
-
-    public Configurator() {
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), false);
+    private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
+    private static final Handler HANDLER = new Handler();
+    private Configurator() {
+        LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, false);
+        LATTE_CONFIGS.put(ConfigKeys.HANDLER, HANDLER);
     }
 
     /**
@@ -38,10 +44,11 @@ public class Configurator {
      */
     public final void configure() {
         initIcons();
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), true);
+        LATTE_CONFIGS.put(ConfigKeys.CONFIG_READY, true);
+
     }
 
-    public static HashMap<String, Object> getLatteConfigs() {
+    public static HashMap<Object, Object> getLatteConfigs() {
         return LATTE_CONFIGS;
     }
 
@@ -49,13 +56,13 @@ public class Configurator {
      * 配置主路径
      */
     public final Configurator withApiHost(String host){
-        LATTE_CONFIGS.put(ConfigType.API_HOST.name(),host);
+        LATTE_CONFIGS.put(ConfigKeys.API_HOST,host);
         return this;
     }
 
     public void  checkConfiguration(){
         //让不可变性尽量最大
-        final boolean isReady= (boolean) LATTE_CONFIGS.get(ConfigType.CONFIG_READY.name());
+        final boolean isReady= (boolean) LATTE_CONFIGS.get(ConfigKeys.CONFIG_READY);
 
         if (!isReady){
             throw new RuntimeException("Configuration is not ready ,call configution ");
@@ -68,7 +75,7 @@ public class Configurator {
      * @return
      */
     @SuppressWarnings("unchecked")
-    final <T> T getConfiguration(Enum<ConfigType> key){
+    final <T> T getConfiguration(Enum<ConfigKeys> key){
         checkConfiguration();
         return (T)LATTE_CONFIGS.get(key);
     }
@@ -90,5 +97,27 @@ public class Configurator {
     public final Configurator withIcon(IconFontDescriptor descriptor){
         ICONS.add(descriptor);
         return this;
+    }
+
+    public final Configurator withInterceptor(Interceptor interceptor) {
+        INTERCEPTORS.add(interceptor);
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
+        return this;
+    }
+
+    public final Configurator withInterceptors(ArrayList<Interceptor> interceptors) {
+        INTERCEPTORS.addAll(interceptors);
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR, INTERCEPTORS);
+        return this;
+    }
+
+    @SuppressWarnings("unchecked")
+    final <T> T getConfiguration(Object key) {
+        checkConfiguration();
+        final Object value = LATTE_CONFIGS.get(key);
+        if (value == null) {
+            throw new NullPointerException(key.toString() + " IS NULL");
+        }
+        return (T) LATTE_CONFIGS.get(key);
     }
 }

@@ -11645,6 +11645,27 @@
                         "endOffset": 128317
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 1852,
+                    "startColumn": 4,
+                    "startOffset": 138847,
+                    "endLine": 1865,
+                    "endColumn": 12,
+                    "endOffset": 139425
+                },
+                "from": {
+                    "file": "D:\\ASproject\\latte\\latte-core\\build\\intermediates\\bundles\\default\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 143,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 721
+                    }
+                }
             }
         ]
     }

@@ -1141,6 +1141,7 @@ int style Widget_AppCompat_Spinner_Underlined 0x7f07015e
 int style Widget_AppCompat_TextView_SpinnerItem 0x7f07015f
 int style Widget_AppCompat_Toolbar 0x7f070160
 int style Widget_AppCompat_Toolbar_Button_Navigation 0x7f070161
+int style dialog 0x7f070162
 int[] styleable AVLoadingIndicatorView { 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035 }
 int styleable AVLoadingIndicatorView_indicatorColor 5
 int styleable AVLoadingIndicatorView_indicatorName 4

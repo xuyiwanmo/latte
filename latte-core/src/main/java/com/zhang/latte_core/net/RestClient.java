@@ -7,6 +7,7 @@ import com.zhang.latte_core.net.callback.IFailure;
 import com.zhang.latte_core.net.callback.IRequest;
 import com.zhang.latte_core.net.callback.ISuccess;
 import com.zhang.latte_core.net.callback.RequestCallbacks;
+import com.zhang.latte_core.net.download.DownloadHandler;
 import com.zhang.latte_core.ui.LatteLoader;
 import com.zhang.latte_core.ui.LoaderStyle;
 
@@ -28,6 +29,9 @@ public class RestClient {
     private final String URL;
     private final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
     private final IRequest REQUEST;
+    private final String DOWNLOAD_DIR;
+    private final String EXTENSION;
+    private final String NAME;
     private final ISuccess SUCCESS;
     private final IFailure FAILURE;
     private final IError ERROR;
@@ -36,9 +40,27 @@ public class RestClient {
     private final Context CONTEXT;
     private final File FILE;
 
+    public RestClient(String URL, IRequest REQUEST, String DOWNLOAD_DIR, String EXTENSION, String NAME, ISuccess SUCCESS, IFailure FAILURE, IError ERROR, RequestBody BODY, LoaderStyle LOADER_STYLE, Context CONTEXT, File FILE) {
+        this.URL = URL;
+        this.REQUEST = REQUEST;
+        this.DOWNLOAD_DIR = DOWNLOAD_DIR;
+        this.EXTENSION = EXTENSION;
+        this.NAME = NAME;
+        this.SUCCESS = SUCCESS;
+        this.FAILURE = FAILURE;
+        this.ERROR = ERROR;
+        this.BODY = BODY;
+        this.LOADER_STYLE = LOADER_STYLE;
+        this.CONTEXT = CONTEXT;
+        this.FILE = FILE;
+    }
+
     public RestClient(String url,
                       WeakHashMap<String, Object> params,
                       IRequest request,
+                      String download_dir,
+                      String extension,
+                      String name,
                       ISuccess success,
                       IFailure failure,
                       IError error,
@@ -56,6 +78,9 @@ public class RestClient {
         this.LOADER_STYLE = loaderStyle;
         this.CONTEXT = context;
         this.FILE=file;
+        this.DOWNLOAD_DIR = download_dir;
+        this.EXTENSION = extension;
+        this.NAME = name;
     }
 
     public static RestClientBuilder builder() {
@@ -150,5 +175,11 @@ public class RestClient {
 
     public final void delete() {
         request(HttpMethod.DELETE);
+    }
+
+    public final void download() {
+        new DownloadHandler(URL, PARAMS,REQUEST, DOWNLOAD_DIR, EXTENSION, NAME,
+                SUCCESS, FAILURE, ERROR)
+                .handleDownload();
     }
 }

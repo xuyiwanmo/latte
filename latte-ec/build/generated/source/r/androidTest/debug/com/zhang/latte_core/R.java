@@ -144,6 +144,8 @@ public final class R {
         public static final int iconifiedByDefault = 0x7f0100e9;
         public static final int imageButtonStyle = 0x7f01009d;
         public static final int indeterminateProgressStyle = 0x7f010044;
+        public static final int indicatorColor = 0x7f010035;
+        public static final int indicatorName = 0x7f010034;
         public static final int initialActivityCount = 0x7f010051;
         public static final int isLightTheme = 0x7f010003;
         public static final int itemPadding = 0x7f010046;
@@ -205,7 +207,11 @@ public final class R {
         public static final int logo = 0x7f01003c;
         public static final int logoDescription = 0x7f01010e;
         public static final int maxButtonHeight = 0x7f010108;
+        public static final int maxHeight = 0x7f010033;
+        public static final int maxWidth = 0x7f010031;
         public static final int measureWithLargestChild = 0x7f0100db;
+        public static final int minHeight = 0x7f010032;
+        public static final int minWidth = 0x7f010030;
         public static final int multiChoiceItemLayout = 0x7f010055;
         public static final int navigationContentDescription = 0x7f01010d;
         public static final int navigationIcon = 0x7f01010c;
@@ -811,6 +817,9 @@ public final class R {
         public static final int status_bar_notification_info_overflow = 0x7f050014;
     }
     public static final class style {
+        public static final int AVLoadingIndicatorView = 0x7f07009f;
+        public static final int AVLoadingIndicatorView_Large = 0x7f0700a0;
+        public static final int AVLoadingIndicatorView_Small = 0x7f0700a1;
         public static final int AlertDialog_AppCompat = 0x7f0700a2;
         public static final int AlertDialog_AppCompat_Light = 0x7f0700a3;
         public static final int Animation_AppCompat_Dialog = 0x7f0700a4;
@@ -1164,6 +1173,13 @@ public final class R {
         public static final int Widget_AppCompat_Toolbar_Button_Navigation = 0x7f070161;
     }
     public static final class styleable {
+        public static final int[] AVLoadingIndicatorView = { 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035 };
+        public static final int AVLoadingIndicatorView_indicatorColor = 5;
+        public static final int AVLoadingIndicatorView_indicatorName = 4;
+        public static final int AVLoadingIndicatorView_maxHeight = 3;
+        public static final int AVLoadingIndicatorView_maxWidth = 1;
+        public static final int AVLoadingIndicatorView_minHeight = 2;
+        public static final int AVLoadingIndicatorView_minWidth = 0;
         public static final int[] ActionBar = { 0x7f010002, 0x7f01002f, 0x7f010036, 0x7f010037, 0x7f010038, 0x7f010039, 0x7f01003a, 0x7f01003b, 0x7f01003c, 0x7f01003d, 0x7f01003e, 0x7f01003f, 0x7f010040, 0x7f010041, 0x7f010042, 0x7f010043, 0x7f010044, 0x7f010045, 0x7f010046, 0x7f010047, 0x7f010048, 0x7f010049, 0x7f01004a, 0x7f01004b, 0x7f01004c, 0x7f01004d, 0x7f01004e, 0x7f01004f, 0x7f01008d };
         public static final int[] ActionBarLayout = { 0x010100b3 };
         public static final int ActionBarLayout_android_layout_gravity = 0;

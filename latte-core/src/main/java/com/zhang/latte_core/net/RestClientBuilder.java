@@ -28,7 +28,10 @@ public class RestClientBuilder {
     private RequestBody mBody = null;
     private Context mContext = null;
     private LoaderStyle mLoaderStyle = null;
-    private File mFile=null;
+    private File mFile = null;
+    private String mDownloadDir = null;
+    private String mExtension = null;
+    private String mName = null;
 
     RestClientBuilder() {
 
@@ -73,31 +76,52 @@ public class RestClientBuilder {
         this.mIError = iError;
         return this;
     }
+
     public final RestClientBuilder file(File file) {
         this.mFile = file;
         return this;
     }
+
     public final RestClientBuilder file(String filePath) {
         this.mFile = new File(filePath);
         return this;
     }
 
+
+    public final RestClientBuilder name(String name) {
+        this.mName = name;
+        return this;
+    }
+
+    public final RestClientBuilder dir(String dir) {
+        this.mDownloadDir = dir;
+        return this;
+    }
+
+    public final RestClientBuilder extension(String extension) {
+        this.mExtension = extension;
+        return this;
+    }
+
     /**
      * 加载对话框
+     *
      * @return
      */
 
-    public final RestClientBuilder loader(Context context){
-        this.mContext=context;
-        this.mLoaderStyle=LoaderStyle.BallSpinFadeLoaderIndicator;
+    public final RestClientBuilder loader(Context context) {
+        this.mContext = context;
+        this.mLoaderStyle = LoaderStyle.BallSpinFadeLoaderIndicator;
         return this;
     }
-    public final RestClientBuilder loader(Context context,LoaderStyle loaderStyle){
-        this.mContext=context;
-        this.mLoaderStyle=loaderStyle;
+
+    public final RestClientBuilder loader(Context context, LoaderStyle loaderStyle) {
+        this.mContext = context;
+        this.mLoaderStyle = loaderStyle;
         return this;
     }
+
     public final RestClient build() {
-        return new RestClient(mUrl, PARAMS, mIRequest, mISuccess, mIFailure, mIError, mBody, mContext, mLoaderStyle,mFile);
+        return new RestClient(mUrl, PARAMS, mIRequest, mDownloadDir, mExtension, mName, mISuccess, mIFailure, mIError, mBody, mContext, mLoaderStyle, mFile);
     }
 }
