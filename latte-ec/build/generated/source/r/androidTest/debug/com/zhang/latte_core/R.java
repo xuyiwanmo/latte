@@ -1171,6 +1171,7 @@ public final class R {
         public static final int Widget_AppCompat_TextView_SpinnerItem = 0x7f07015f;
         public static final int Widget_AppCompat_Toolbar = 0x7f070160;
         public static final int Widget_AppCompat_Toolbar_Button_Navigation = 0x7f070161;
+        public static final int dialog = 0x7f070162;
     }
     public static final class styleable {
         public static final int[] AVLoadingIndicatorView = { 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035 };
